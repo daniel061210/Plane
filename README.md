@@ -29,10 +29,10 @@
 >
 > ```
 > Plane/
-> ├── Copy_of_jupyter.ipynb   # Main Colab notebook (training pipeline)
-> ├── resnet50_aircraft_classifier.pth  # Saved model weights (after training)
-> ├── training_curves.png     # Loss & accuracy plots (generated after training)
-> ├── data/                   # FGVC-Aircraft dataset (auto-downloaded)
+> ├── Copy_of_jupyter.ipynb              # Main Colab notebook (training pipeline)
+> ├── resnet50_aircraft_classifier.pth   # Saved model weights (after training)
+> ├── training_curves.png                # Loss & accuracy plots (generated after training)
+> ├── data/                              # FGVC-Aircraft dataset (auto-downloaded)
 > │   └── fgvc-aircraft-2013b/
 > └── README.md
 > ```
@@ -75,13 +75,13 @@
 >               
 >                9. | Epoch | Train Loss | Train Acc | Val Loss | Val Acc |
 > |-------|-----------|-----------|---------|---------|
-> | 1     | 4.4570    | 5.37%     | 3.8915  | 16.56%  |
-> | 2     | 3.2646    | 32.36%    | 2.8406  | 33.42%  |
-> | 3     | 2.2899    | 56.90%    | 2.2640  | 49.89%  |
-> | 4     | 1.8123    | 71.00%    | 2.0360  | 57.79%  |
-> | 5     | 1.5274    | 80.74%    | 1.9352  | 61.66%  |
-> | 6     | 1.3360    | 87.79%    | 1.8266  | 64.69%  |
-> | 7     | 1.2279    | 91.48%    | 1.7514  | 68.05%  |
+> | 1 | 4.4570 | 5.37% | 3.8915 | 16.56% |
+> | 2 | 3.2646 | 32.36% | 2.8406 | 33.42% |
+> | 3 | 2.2899 | 56.90% | 2.2640 | 49.89% |
+> | 4 | 1.8123 | 71.00% | 2.0360 | 57.79% |
+> | 5 | 1.5274 | 80.74% | 1.9352 | 61.66% |
+> | 6 | 1.3360 | 87.79% | 1.8266 | 64.69% |
+> | 7 | 1.2279 | 91.48% | 1.7514 | 68.05% |
 >
 > > Training was still in progress at epoch 7 at time of writing. Best validation accuracy reached: **68.05%**.
 > >
@@ -89,18 +89,16 @@
 > >
 > > ## 🛩️ Dataset: FGVC-Aircraft
 > >
-> > The [FGVC-Aircraft](https://www.robots.ox.ac.uk/~vgg/data/fgvc-aircraft/) benchmark contains images of aircraft with annotations at multiple levels of granularity. This project uses the **variant** level (100 classes — the most fine-grained), e.g.:
+> > The [FGVC-Aircraft](https://www.robots.ox.ac.uk/~vgg/data/fgvc-aircraft/) benchmark contains images of aircraft with annotations at multiple levels of granularity. This project uses the **variant** level (100 classes — the most fine-grained).
 > >
-> > - 707-320, 727-200, 737-200 through 737-900
-> > - - 747-100 through 747-400
-> >   - - A318, A319, A320, A321, A330, A340, A380
-> >     - - Many more regional jets, turboprops, and general aviation types
-> >      
-> >       - **Dataset split used:**
-> >       - - Train: 3,334 images
-> >         - - Validation: 3,333 images
-> >          
-> >           - ---
+> > Sample aircraft classes: 707-320, 727-200, 737-200 through 737-900, 747-100 through 747-400, A318, A319, A320, A321, A330, A340, A380, and many more regional jets and turboprops.
+> >
+> > **Dataset split used:**
+> >
+> > - Train: 3,334 images
+> > - - Validation: 3,333 images
+> >  
+> >   - ---
 > >
 > > ## 📌 Future Improvements
 > >
