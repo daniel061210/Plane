@@ -100,6 +100,71 @@
 > >  
 > >   - ---
 > >
+> >   ## 🧪 Testing / Running Inference
+> >
+> >   The `testing.ipynb` notebook lets you run predictions on any plane photo using the trained model. It supports both **fastai** (`.pkl`) and **PyTorch** (`.pth`) model formats.
+> >
+> >   ### 1. Requirements
+> >
+> >   ```bash
+> >   # For PyTorch models (.pth):
+> >   pip install torch torchvision pillow
+> >
+> >   # For fastai models (.pkl):
+> >   pip install fastai
+> >   ```
+> >
+> >   ### 2. Set Your Model Path
+> >
+> >   At the top of the code cell, set `MODEL_PATH` to your trained model file:
+> >
+> >   ```python
+> >   MODEL_PATH = "resnet50_aircraft_classifier.pth"  # your .pth or .pkl file
+> >   ```
+> >
+> >   ### 3. For PyTorch Models — Add `class_names.txt`
+> >
+> >   If using the `.pth` model from the Colab training notebook, create a `class_names.txt` file in the same directory listing all 100 aircraft classes in alphabetical order (one per line, matching the order used during training):
+> >
+> >   ```
+> >   707-320
+> >   727-200
+> >   737-200
+> >   737-300
+> >   ...
+> >   ```
+> >
+> >   Fastai `.pkl` models embed class names automatically — no extra file needed.
+> >
+> >   ### 4. Run the Notebook
+> >
+> >   Run the code cell (`Shift+Enter`). The script will:
+> >
+> >   1. Load the model (tries fastai first for `.pkl` files, falls back to PyTorch for `.pth`/`.pt` files)
+> >   2. 2. Enter an interactive loop prompting you for an image path
+> >      3. 3. Preprocess the image (resize to 256px → center-crop to 224×224 → ImageNet normalization)
+> >         4. 4. Run inference and print the predicted aircraft type, confidence score, and a top-5 bar chart
+> >            5. 5. Type `q` or `quit` to exit
+> >              
+> >               6. ### 5. Example Output
+> >              
+> >               7. ```
+> >                  ═══════════════════════════════════════════════════════
+> >                   Image   : /home/user/boeing737.jpg
+> >                   ✈ Plane type : 737-800
+> >                   Confidence   : 91.4%
+> >                  ──────────────────────────────────────────────────────
+> >                   Top predictions:
+> >                    1. 737-800                          91.4% ██████████████████
+> >                    2. 737-700                           5.2% █
+> >                    3. 737-900                           2.1%
+> >                    4. 737-600                           0.8%
+> >                    5. 757-200                           0.5%
+> >                  ═══════════════════════════════════════════════════════
+> >                  ```
+> >              
+> >                  ---
+> >
 > > ## 📌 Future Improvements
 > >
 > > - Continue training beyond 10 epochs for higher validation accuracy
